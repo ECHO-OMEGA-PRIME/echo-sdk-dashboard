@@ -1,0 +1,21 @@
+{
+  "name": "@echo-prime/sdk-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Developer dashboard API for Echo SDK tenants — usage analytics, key management, quota monitoring, alerts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "migrate:local": "wrangler d1 execute echo-sdk-dashboard --local --file=migrations/0001_init.sql",
+    "migrate:remote": "wrangler d1 execute echo-sdk-dashboard --remote --file=migrations/0001_init.sql"
+  },
+  "dependencies": {
+    "hono": "^4.4.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240903.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.60.0"
+  }
+}

@@ -1,0 +1,23 @@
+name = "echo-sdk-dashboard"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+WORKER_VERSION = "1.0.0"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "echo-sdk-dashboard"
+database_id = "14f830cd-8a15-4e29-b1f8-977ff05c7b87"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "d51d271c660843b49bc1db471182df94"
+
+[[services]]
+binding = "SDK_GATEWAY"
+service = "echo-sdk-gateway"
+
+[triggers]
+crons = ["0 0 * * *", "0 */6 * * *"]
