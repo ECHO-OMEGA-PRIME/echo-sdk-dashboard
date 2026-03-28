@@ -375,6 +375,8 @@ app.use('*', cors({
 // ---------------------------------------------------------------------------
 // GET /health — Public health check
 // ---------------------------------------------------------------------------
+app.get("/", (c) => c.json({ service: 'echo-sdk-dashboard', status: 'operational' }));
+
 app.get('/health', async (c) => {
   const start = Date.now();
   const version = c.env.WORKER_VERSION || '1.0.0';
